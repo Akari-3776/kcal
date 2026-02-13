@@ -13,20 +13,27 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      max-width: 400px;
+      max-width: 450px;
       margin: auto;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    input, button {
+    input, select, button {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
       font-size: 16px;
     }
+    #list {
+      margin-top: 20px;
+      background: #fafafa;
+      padding: 10px;
+      border-radius: 8px;
+    }
     #result {
       margin-top: 20px;
       font-size: 20px;
       font-weight: bold;
+      white-space: pre-line;
     }
   </style>
 </head>
@@ -35,16 +42,28 @@
   <div class="box">
     <h2>カロリー計算アプリ</h2>
 
+    <label>食べ物を選択</label>
+    <select id="foodList">
+      <option value="">選択してください</option>
+      <option value="120">りんご（120kcal）</option>
+      <option value="250">おにぎり（250kcal）</option>
+      <option value="350">ハンバーガー（350kcal）</option>
+      <option value="500">カレーライス（500kcal）</option>
+      <option value="90">バナナ（90kcal）</option>
+    </select>
+
     <label>食べ物のカロリー（1個あたり）</label>
     <input id="calPerItem" type="number" placeholder="例: 120">
 
     <label>食べた個数</label>
     <input id="quantity" type="number" placeholder="例: 3">
 
+    <button id="addBtn">追加する</button>
+
     <label>1日の目標カロリー</label>
     <input id="targetCal" type="number" placeholder="例: 1800">
 
-    <button id="calcBtn">計算する</button>
+    <div id="list"></div>
 
     <div id="result"></div>
   </div>
